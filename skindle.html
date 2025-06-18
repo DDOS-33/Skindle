@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skins Minecraft Aleatórias</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="skindle.css">
+    <script src="skindle.js"></script>
+
+</head>
+
+<body>
+    <!-- Tela de Login -->
+    <div class="screen active" id="loginScreen">
+        <div class="container">
+            <div class="logo-text">MINECRAFT SKINS</div>
+            
+            <div class="tabs">
+                <div class="tab active" id="loginTab">ENTRAR</div>
+                <div class="tab" id="signupTab">CADASTRAR</div>
+            </div>
+            
+            <!-- Formulário de Login -->
+            <div id="loginFormContainer" class="form-container">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">NOME DE USUÁRIO</label>
+                        <input type="text" id="loginUsername" class="form-control" placeholder="Digite seu nome" autocomplete="off">
+                        <div class="error" id="loginUsernameError">Por favor, insira seu nome de usuário</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">SENHA</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Digite sua senha">
+                        <div class="error" id="loginPasswordError">Por favor, insira sua senha</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">ENTRAR</button>
+                    
+                    <div class="form-footer">
+                        <p>Esqueceu sua senha? <a href="#" class="form-link">Recuperar</a></p>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Formulário de Cadastro -->
+            <div id="signupFormContainer" class="form-container" style="display:none;">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="signupUsername">NOME DE USUÁRIO</label>
+                        <input type="text" id="signupUsername" class="form-control" placeholder="Digite seu nome" autocomplete="off">
+                        <div class="error" id="signupUsernameError">O nome deve ter pelo menos 3 caracteres</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">EMAIL</label>
+                        <input type="email" id="signupEmail" class="form-control" placeholder="Digite seu email" autocomplete="off">
+                        <div class="error" id="signupEmailError">Por favor, insira um email válido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupPassword">SENHA</label>
+                        <input type="password" id="signupPassword" class="form-control" placeholder="Crie uma senha">
+                        <div class="error" id="signupPasswordError">A senha deve ter pelo menos 6 caracteres</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">CONFIRMAR SENHA</label>
+                        <input type="password" id="signupConfirmPassword" class="form-control" placeholder="Confirme sua senha">
+                        <div class="error" id="signupConfirmPasswordError">As senhas não coincidem</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">CRIAR CONTA</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tela Principal -->
+    <div class="screen" id="mainScreen">
+        <div class="container">
+            <div class="nav">
+                <div class="username-display">
+                    Usuário: <span id="currentUsername">Convidado</span>
+                </div>
+                <button id="logoutBtn" class="btn">SAIR</button>
+            </div>
+            
+            <h1>SKINS MINECRAFT ALEATÓRIAS</h1>
+            <button id="generateBtn" class="btn btn-primary">GERAR SKIN ALEATÓRIA</button>
+            
+            <div class="history-info">
+                Histórico limitado às últimas <span id="historyLimit">5</span> skins
+            </div>
+            
+            <div class="loading" id="loading">
+                Buscando skin... <span id="loadingDots"></span>
+            </div>
+            
+            <div class="skin-container" id="skinContainer">
+                <div class="no-skins">
+                    Nenhuma skin gerada ainda. Clique no botão acima para começar!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        As skins são obtidas do NameMC usando UUIDs aleatórios | Desenvolvido com ♥ para fãs de Minecraft
+    </div>
+
+</body>
+</html>
